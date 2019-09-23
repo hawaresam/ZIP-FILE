@@ -1,0 +1,59 @@
+<div>
+    <div *ngIf="statusOfName">
+        <p>May I have your name?</p>
+        <div class="input-group">
+        <input id="custname" [(ngModel)] ="customer.userName" type="text" class="form-control" placeholder="Name"/>
+        <div class="input-group-btn">      
+            <button class="btn btn-default" type="submit" (click)="toggledisplay('showEmail')">
+                <i class="glyphicon glyphicon-send"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <div *ngIf="statusOfEmail">
+        <p>May I have your email?</p>
+        <div class="input-group" >
+            <input [(ngModel)] ="customer.email" type="text" class="form-control" placeholder="Email"/>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" (click)="toggledisplay('showContactNumber')">
+                    <i class="glyphicon glyphicon-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="statusOfContactNumber">
+        <p>May I have your contact number?</p>
+        <div class="input-group" >
+            <input [(ngModel)] ="customer.contactno" type="text" class="form-control" placeholder="Contact number"/>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" (click)="toggledisplay('showCity')">
+                    <i class="glyphicon glyphicon-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="statusOfCity">
+        <p>May I have your city?</p>
+        <div class="input-group" >
+            <input [(ngModel)] ="customer.city" type="text" class="form-control" placeholder="City"/>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" (click)="saveCustomer()">
+                    <i class="glyphicon glyphicon-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    These are your details:
+    {{customer.userName}}
+    {{customer.email}}
+    {{customer.contactno}}
+    {{customer.city}}
+
+</div>
+ 
+  
+

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularclientchatbot';
+  title = 'Samiksha';
+  totalcartval:boolean=false;
+
+  customFunc(data){
+    this.totalcartval = data;
+    console.log("In parent: "+this.totalcartval);
+}
 }
